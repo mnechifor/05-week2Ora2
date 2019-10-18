@@ -11,6 +11,67 @@ namespace ConsoleApp5
         static void Main(string[] args)
         {
             //LinkedListExample();
+            // ListExample();
+
+            RandomGuess();
+
+            Console.ReadLine();
+        }
+
+        private static void RandomGuess()
+        {
+            Random rand = new Random();
+            int numarRandom = rand.Next(1, 10);
+
+            while (true)
+            {
+                Console.WriteLine("Introduceti nr:");
+                int nr = int.Parse(Console.ReadLine());
+
+                if (numarRandom == nr)
+                {
+                    Console.WriteLine("Bravo");
+                    break;
+                }
+
+                if (nr > numarRandom)
+                {
+                    Console.WriteLine("Prea mare");
+                }
+                else
+                {
+                    Console.WriteLine("Prea mic");
+                }
+            }
+        }
+
+        private static void ListExample()
+        {
+            List<int> list = new List<int>(10000);
+            int initial = list.Capacity;
+
+            for (int i = 0; i < 10000; i++)
+            {
+                list.Add(10);
+
+                if (list.Capacity != initial)
+                {
+                    Console.WriteLine($"Elements:{list.Count}, Capacity:{list.Capacity}");
+                    initial = list.Capacity;
+                }
+            }
+
+
+            //int[] arr = new int[] { 30, 40, 50 };
+
+            //list.AddRange(arr);
+
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine(list[i]);
+            //}
+
+            Console.WriteLine(list.Capacity);
         }
 
         private static void LinkedListExample()
