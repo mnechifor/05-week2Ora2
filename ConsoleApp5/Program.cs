@@ -13,9 +13,55 @@ namespace ConsoleApp5
             //LinkedListExample();
             // ListExample();
 
-            RandomGuess();
+            //RandomGuess();
+
+            //StringReverse();
+
+            Fibonacci(50);
+
+            for (int i = 0; i < 50; i++)
+            {
+                Console.Write("{0} ", Fibonacci(i));
+            }
+
+            // Fibonacci_Iterative(50);
 
             Console.ReadLine();
+        }
+
+
+        public static void Fibonacci_Iterative(int len)
+        {
+            System.Int64 a = 0, b = 1, suma = 0;
+            Console.Write("{0} {1}", a, b);
+            for (int i = 2; i < len; i++)
+            {
+                suma = a + b;
+                Console.Write(" {0}", suma);
+                a = b;
+                b = suma;
+            }
+        }
+
+        static int Fibonacci(int x)
+        {
+            if (x == 1)
+                return 1;
+
+            if (x == 0)
+                return 0;
+
+            return Fibonacci(x - 1) + Fibonacci(x - 2);
+        }
+
+        private static void StringReverse()
+        {
+            string text = "Mihai";
+
+            for (int i = text.Length - 1; i >= 0; i--)
+            {
+                Console.Write(text[i]);
+            }
         }
 
         private static void RandomGuess()
